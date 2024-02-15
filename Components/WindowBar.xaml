@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MyApp.Components.WindowBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyApp.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="700">
+
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Width" Value="30" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+        </Style>
+    </UserControl.Resources>
+
+    <Border Grid.RowSpan="10" BorderThickness="0" Background="#FF59ADFF" >
+        <Grid>
+            <WrapPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" >
+                <!--<Image Source="../Assets/...png" Margin="10 5" />-->
+                <TextBlock Text="MyApp" VerticalAlignment="Center" Foreground="White" FontFamily="Calisto MT" ToolTip="{Binding AppVersie}"/>
+            </WrapPanel>
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Right" Width="Auto" >
+                <Button Command="{Binding btnMinimize}" Content="" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Assets/Minimize-icon.png" Stretch="None" />
+                    </Button.Background>
+                </Button>
+                <Button Command="{Binding btnClose}" Content="" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Assets/Close-icon.png" Stretch="None" />
+                    </Button.Background>
+                </Button>
+            </WrapPanel>
+        </Grid>
+    </Border>
+
+</UserControl>
